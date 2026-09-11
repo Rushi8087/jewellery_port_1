@@ -4,12 +4,12 @@ import { motion } from 'motion/react';
 export default function SocialProof() {
   // Real Lanah Jewels product imagery for Instagram community feed
   const feed = [
-    '/images/products/celestial-moon-necklace.png',
-    '/images/products/pave-buckle-bangle.png',
-    '/images/products/garnet-drop-choker.png',
-    '/images/products/butterfly-cuff-bracelet.png',
-    '/images/products/daisy-blossom-bangle.png',
-    '/images/products/seashell-starfish-necklace.png',
+    '/images/products/celestial-moon-necklace.webp',
+    '/images/products/pave-buckle-bangle.webp',
+    '/images/products/garnet-drop-choker.webp',
+    '/images/products/butterfly-cuff-bracelet.webp',
+    '/images/products/daisy-blossom-bangle.webp',
+    '/images/products/seashell-starfish-necklace.webp',
   ];
 
   return (
@@ -42,6 +42,8 @@ export default function SocialProof() {
             <img 
               src={img} 
               alt="Instagram feed post" 
+              loading="lazy"
+              decoding="async"
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
             />
             <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">

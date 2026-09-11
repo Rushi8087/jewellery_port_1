@@ -15,7 +15,7 @@ export const PRODUCTS: Product[] = [
     name: 'CELESTIAL CRESCENT MOON NECKLACE',
     price: 699,
     category: 'Necklaces',
-    image: '/images/products/celestial-moon-necklace.png',
+    image: '/images/products/celestial-moon-necklace.webp',
     tags: ['Bestseller', '18K Gold Plated']
   },
   {
@@ -23,7 +23,7 @@ export const PRODUCTS: Product[] = [
     name: 'ROYAL EMERALD TRIO DROP NECKLACE',
     price: 899,
     category: 'Necklaces',
-    image: '/images/products/emerald-trio-necklace.png',
+    image: '/images/products/emerald-trio-necklace.webp',
     tags: ['Luxury', 'Statement']
   },
   {
@@ -31,7 +31,7 @@ export const PRODUCTS: Product[] = [
     name: 'MIDNIGHT BUTTERFLY CUFF BRACELET',
     price: 699,
     category: 'Bracelets',
-    image: '/images/products/butterfly-cuff-bracelet.png',
+    image: '/images/products/butterfly-cuff-bracelet.webp',
     tags: ['Statement', 'Anti-Tarnish']
   },
   {
@@ -39,7 +39,7 @@ export const PRODUCTS: Product[] = [
     name: 'PAVÉ BUCKLE STATEMENT BANGLE',
     price: 899,
     category: 'Bangles',
-    image: '/images/products/pave-buckle-bangle.png',
+    image: '/images/products/pave-buckle-bangle.webp',
     tags: ['Luxury', 'Bestseller']
   },
   {
@@ -47,7 +47,7 @@ export const PRODUCTS: Product[] = [
     name: 'SPARKLING RIBBON BOW PENDANT',
     price: 749,
     category: 'Necklaces',
-    image: '/images/products/ribbon-bow-necklace.png',
+    image: '/images/products/ribbon-bow-necklace.webp',
     tags: ['Trending', 'Anti-Tarnish']
   },
   {
@@ -55,7 +55,7 @@ export const PRODUCTS: Product[] = [
     name: 'EMERALD BAGUETTE DUAL CHAIN BRACELET',
     price: 649,
     category: 'Bracelets',
-    image: '/images/products/emerald-dual-chain-bracelet.png',
+    image: '/images/products/emerald-dual-chain-bracelet.webp',
     tags: ['New Arrival']
   },
   {
@@ -63,7 +63,7 @@ export const PRODUCTS: Product[] = [
     name: 'DAISY BLOSSOM FLORAL BANGLE',
     price: 799,
     category: 'Bangles',
-    image: '/images/products/daisy-blossom-bangle.png',
+    image: '/images/products/daisy-blossom-bangle.webp',
     tags: ['Customer Fav']
   },
   {
@@ -71,7 +71,7 @@ export const PRODUCTS: Product[] = [
     name: 'PAVÉ TEARDROP CASCADE NECKLACE',
     price: 849,
     category: 'Necklaces',
-    image: '/images/products/teardrop-charms-necklace.png',
+    image: '/images/products/teardrop-charms-necklace.webp',
     tags: ['Bestseller', '18K Gold Plated']
   },
   {
@@ -79,7 +79,7 @@ export const PRODUCTS: Product[] = [
     name: 'ETERNAL KNOT HEART PENDANT',
     price: 649,
     category: 'Necklaces',
-    image: '/images/products/eternal-heart-necklace.png',
+    image: '/images/products/eternal-heart-necklace.webp',
     tags: ['Romantic']
   },
   {
@@ -87,7 +87,7 @@ export const PRODUCTS: Product[] = [
     name: 'GARNET TEARDROP CHARM CHOKER',
     price: 799,
     category: 'Necklaces',
-    image: '/images/products/garnet-drop-choker.png',
+    image: '/images/products/garnet-drop-choker.webp',
     tags: ['Festive Drop']
   },
   {
@@ -95,7 +95,7 @@ export const PRODUCTS: Product[] = [
     name: 'GRECIAN KEY LUXE BANGLE',
     price: 749,
     category: 'Bangles',
-    image: '/images/products/grecian-key-bangle.png',
+    image: '/images/products/grecian-key-bangle.webp',
     tags: ['Timeless', 'Waterproof']
   },
   {
@@ -103,7 +103,7 @@ export const PRODUCTS: Product[] = [
     name: 'MOTHER OF PEARL STARFISH NECKLACE',
     price: 799,
     category: 'Necklaces',
-    image: '/images/products/seashell-starfish-necklace.png',
+    image: '/images/products/seashell-starfish-necklace.webp',
     tags: ['Summer Edit']
   },
   {
@@ -111,7 +111,7 @@ export const PRODUCTS: Product[] = [
     name: 'CRYSTAL LILY BUD NECKLACE',
     price: 599,
     category: 'Necklaces',
-    image: '/images/products/crystal-lily-necklace.png',
+    image: '/images/products/crystal-lily-necklace.webp',
     tags: ['Dainty']
   }
 ];

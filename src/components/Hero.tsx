@@ -39,9 +39,11 @@ export default function Hero() {
           loop 
           muted 
           playsInline
-          preload="auto"
+          preload="metadata"
+          poster="/images/hero-poster.webp"
           className="w-full h-full object-cover scale-105 transform will-change-transform opacity-90"
         >
+          <source src="/videos/hero.webm" type="video/webm" />
           <source src="/videos/hero.mp4" type="video/mp4" />
         </video>
 
@@ -150,6 +152,9 @@ export default function Hero() {
                   <img 
                     src={product.image} 
                     alt={product.name}
+                    loading={Math.abs(diff) <= 1 ? "eager" : "lazy"}
+                    decoding="async"
+                    fetchPriority={isCenter ? "high" : "auto"}
                     className="w-full h-full object-cover opacity-95 group-hover:opacity-100 transition-all duration-500 group-hover:scale-105"
                   />
                   

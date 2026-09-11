@@ -8,10 +8,10 @@ type CategoriesProps = {
 
 // Map categories to images (using authentic product previews)
 const categoryImages: Record<string, string> = {
-  'All': '/images/products/celestial-moon-necklace.png',
-  'Necklaces': '/images/products/emerald-trio-necklace.png',
-  'Bracelets': '/images/products/butterfly-cuff-bracelet.png',
-  'Bangles': '/images/products/pave-buckle-bangle.png',
+  'All': '/images/products/celestial-moon-necklace.webp',
+  'Necklaces': '/images/products/emerald-trio-necklace.webp',
+  'Bracelets': '/images/products/butterfly-cuff-bracelet.webp',
+  'Bangles': '/images/products/pave-buckle-bangle.webp',
 };
 
 export default function Categories({ activeCategory, setActiveCategory }: CategoriesProps) {
@@ -39,6 +39,10 @@ export default function Categories({ activeCategory, setActiveCategory }: Catego
                   <img 
                     src={categoryImages[category] || categoryImages['All']} 
                     alt={category}
+                    loading="lazy"
+                    decoding="async"
+                    width="96"
+                    height="96"
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                 </div>
