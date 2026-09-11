@@ -30,8 +30,27 @@ export default function Hero() {
     setTimeout(() => setIsAnimating(false), 500); // match transition duration
   };
 
+  const [touchStartX, setTouchStartX] = useState<number | null>(null);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStartX(e.touches[0].clientX);
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX === null) return;
+    const diffX = touchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(diffX) > 40) {
+      if (diffX > 0) {
+        handleNext();
+      } else {
+        handlePrev();
+      }
+    }
+    setTouchStartX(null);
+  };
+
   return (
-    <section className="relative pt-32 pb-24 overflow-hidden min-h-[90vh] flex flex-col justify-center">
+    <section className="relative pt-28 sm:pt-32 pb-16 sm:pb-24 overflow-hidden min-h-[85vh] sm:min-h-[90vh] flex flex-col justify-center">
       {/* Background Video & Transparent Overlays */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <video 
@@ -56,19 +75,19 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-tr from-amber-950/25 via-transparent to-yellow-900/15 pointer-events-none" />
 
         {/* Smooth Fade Transition into the Cream Background of next section */}
-        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-brand-cream via-brand-cream/80 to-transparent pointer-events-none" />
+        <div className="absolute inset-x-0 bottom-0 h-32 sm:h-40 bg-gradient-to-t from-brand-cream via-brand-cream/80 to-transparent pointer-events-none" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         
         {/* Intro Text */}
-        <div className="mb-10 md:mb-14 overflow-hidden">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-end">
+        <div className="mb-6 sm:mb-10 md:mb-14 overflow-hidden">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8 items-end">
             <motion.h1 
               initial={shouldReduceMotion ? false : { opacity: 0, x: -100 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.9, delay: 0.2, ease: "easeOut" }}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight max-w-md drop-shadow-[0_4px_16px_rgba(0,0,0,0.6)]"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight max-w-md drop-shadow-[0_4px_16px_rgba(0,0,0,0.6)]"
             >
               View our latest works
             </motion.h1>
@@ -76,7 +95,7 @@ export default function Hero() {
               initial={shouldReduceMotion ? false : { opacity: 0, x: 100 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.9, delay: 0.2, ease: "easeOut" }}
-              className="text-lg md:text-xl font-serif italic text-amber-100/90 md:justify-self-end max-w-sm drop-shadow-md"
+              className="text-base sm:text-lg md:text-xl font-serif italic text-amber-100/90 md:justify-self-end max-w-sm drop-shadow-md"
             >
               Everyday sparkle &mdash; anti-tarnish, lightweight jewelry made for daily wear
             </motion.p>
@@ -88,27 +107,29 @@ export default function Hero() {
           initial={shouldReduceMotion ? false : { opacity: 0, y: 80 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.5, ease: "easeOut" }}
-          className="relative rounded-[2rem] md:rounded-[2.5rem] p-6 sm:p-8 md:p-12 lg:p-16 overflow-hidden shadow-[0_25px_60px_-15px_rgba(0,0,0,0.6)] backdrop-blur-xl bg-black/30 md:bg-black/35 border border-white/25 sm:border-white/30 transition-colors duration-300"
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+          className="relative rounded-3xl sm:rounded-[2rem] md:rounded-[2.5rem] p-4 sm:p-8 md:p-12 lg:p-16 overflow-hidden shadow-[0_25px_60px_-15px_rgba(0,0,0,0.6)] backdrop-blur-xl bg-black/35 md:bg-black/35 border border-white/25 sm:border-white/30 transition-colors duration-300 select-none"
         >
           
           {/* Subtle Glow Highlights along card borders */}
           <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/50 to-transparent pointer-events-none" />
           <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-amber-200/30 to-transparent pointer-events-none" />
-          <div className="absolute -top-24 -left-24 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-yellow-500/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute -top-24 -left-24 w-72 sm:w-96 h-72 sm:h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute -bottom-24 -right-24 w-72 sm:w-96 h-72 sm:h-96 bg-yellow-500/10 rounded-full blur-3xl pointer-events-none" />
 
           {/* Panel Header */}
-          <div className="relative z-10 flex flex-col lg:flex-row justify-between items-start lg:items-center mb-8 md:mb-12">
-            <p className="text-[#f9f5f0]/85 font-serif italic max-w-xs text-sm sm:text-base mb-6 lg:mb-0 drop-shadow-sm">
+          <div className="relative z-10 flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 sm:mb-8 md:mb-12 gap-2">
+            <p className="text-[#f9f5f0]/85 font-serif italic max-w-xs text-xs sm:text-sm md:text-base drop-shadow-sm">
               Lanah's combination of statement and simplistic style helps create a look that's as unique as you are
             </p>
-            <h2 className="text-5xl md:text-7xl lg:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-amber-100/80 tracking-tighter uppercase whitespace-nowrap drop-shadow-[0_4px_16px_rgba(0,0,0,0.4)]">
+            <h2 className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-amber-100/80 tracking-tighter uppercase whitespace-nowrap drop-shadow-[0_4px_16px_rgba(0,0,0,0.4)]">
               Our Works
             </h2>
           </div>
 
           {/* Fanned Deck Carousel */}
-          <div className="relative w-full h-[360px] sm:h-[420px] md:h-[500px] flex justify-center items-center py-6 sm:py-10">
+          <div className="relative w-full h-[300px] sm:h-[400px] md:h-[480px] flex justify-center items-center py-4 sm:py-10 overflow-hidden">
             {PRODUCTS.map((product, index) => {
               // Calculate offset relative to currentIndex (-2 to 2)
               let diff = index - currentIndex;
@@ -123,11 +144,16 @@ export default function Hero() {
               const rotationVal = diff * 4; // -8, -4, 0, 4, 8
               
               // Base translation X by percentage of card width
-              const xTranslate = diff * 70;
+              const xTranslate = diff * 62;
 
               return (
                 <motion.div 
                   key={product.id}
+                  onClick={() => {
+                    if (diff !== 0) {
+                      setCurrentIndex(index);
+                    }
+                  }}
                   initial={shouldReduceMotion ? false : {
                     opacity: 0,
                     x: `${xTranslate}%`,
@@ -146,7 +172,7 @@ export default function Hero() {
                     delay: (isInitialLoad && !shouldReduceMotion) ? 0.9 + (index * 0.06) : 0,
                     ease: [0.4, 0, 0.2, 1] 
                   }}
-                  className="absolute shrink-0 w-36 sm:w-48 md:w-64 lg:w-[18rem] aspect-[3/4] rounded-2xl md:rounded-[2rem] overflow-hidden shadow-[0_20px_45px_rgba(0,0,0,0.7)] group cursor-pointer will-change-transform border border-white/20 hover:border-amber-200/50 transition-colors"
+                  className="absolute shrink-0 w-40 sm:w-52 md:w-64 lg:w-[18rem] aspect-[3/4] rounded-2xl md:rounded-[2rem] overflow-hidden shadow-[0_20px_45px_rgba(0,0,0,0.7)] group cursor-pointer will-change-transform border border-white/20 hover:border-amber-200/50 transition-colors"
                   style={{ pointerEvents: isVisible ? 'auto' : 'none' }}
                 >
                   <img 

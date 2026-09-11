@@ -6,27 +6,30 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Top Grid Area */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 lg:gap-4 mb-16">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 sm:gap-8 lg:gap-4 mb-12 sm:mb-16">
           
           {/* Col 1: Contact */}
-          <div className="space-y-6 lg:pr-4 lg:col-span-1">
-            <a href="mailto:care@lanahjewels.com" className="flex items-center space-x-3 text-brand-brown/70 hover:text-brand-terracotta transition-colors">
-              <Mail size={20} strokeWidth={1.5} />
-              <span className="text-sm">care@lanahjewels.com</span>
-            </a>
-            <a href="tel:+918882188858" className="flex items-center space-x-3 text-brand-brown/70 hover:text-brand-terracotta transition-colors">
-              <Phone size={20} strokeWidth={1.5} />
-              <span className="text-sm">+91 88821 88858</span>
-            </a>
+          <div className="space-y-4 sm:space-y-6 col-span-2 sm:col-span-1 lg:col-span-1">
+            <h4 className="font-semibold text-brand-brown text-sm sm:text-base">Contact Us</h4>
+            <div className="space-y-3">
+              <a href="mailto:care@lanahjewels.com" className="flex items-center space-x-2.5 text-brand-brown/70 hover:text-brand-terracotta transition-colors text-xs sm:text-sm truncate">
+                <Mail size={16} strokeWidth={1.5} className="shrink-0" />
+                <span className="truncate">care@lanahjewels.com</span>
+              </a>
+              <a href="tel:+918882188858" className="flex items-center space-x-2.5 text-brand-brown/70 hover:text-brand-terracotta transition-colors text-xs sm:text-sm">
+                <Phone size={16} strokeWidth={1.5} className="shrink-0" />
+                <span>+91 88821 88858</span>
+              </a>
+            </div>
           </div>
 
           {/* Col 2: Categories */}
-          <div className="lg:col-span-1">
-            <h4 className="font-semibold text-brand-brown mb-5 text-base">Categories</h4>
-            <ul className="space-y-3">
+          <div className="col-span-1 lg:col-span-1">
+            <h4 className="font-semibold text-brand-brown mb-3 sm:mb-5 text-sm sm:text-base">Categories</h4>
+            <ul className="space-y-2 sm:space-y-3">
               {['All Jewellery', 'Rings', 'Earrings', 'Neckpieces', 'Bracelets', 'Anklets'].map(link => (
                 <li key={link}>
-                  <a href="#" className="text-sm text-brand-brown/70 hover:text-brand-terracotta transition-colors">
+                  <a href="#shop" className="text-xs sm:text-sm text-brand-brown/70 hover:text-brand-terracotta transition-colors">
                     {link}
                   </a>
                 </li>
@@ -35,12 +38,12 @@ export default function Footer() {
           </div>
 
           {/* Col 3: Information */}
-          <div className="lg:col-span-1">
-            <h4 className="font-semibold text-brand-brown mb-5 text-base">Information</h4>
-            <ul className="space-y-3">
+          <div className="col-span-1 lg:col-span-1">
+            <h4 className="font-semibold text-brand-brown mb-3 sm:mb-5 text-sm sm:text-base">Information</h4>
+            <ul className="space-y-2 sm:space-y-3">
               {['About us', 'Contact us', 'Terms & Conditions', 'Delivery & Returns', 'Privacy Policy', 'FAQs'].map(link => (
                 <li key={link}>
-                  <a href="#" className="text-sm text-brand-brown/70 hover:text-brand-terracotta transition-colors">
+                  <a href="#" className="text-xs sm:text-sm text-brand-brown/70 hover:text-brand-terracotta transition-colors">
                     {link}
                   </a>
                 </li>
@@ -49,12 +52,12 @@ export default function Footer() {
           </div>
 
           {/* Col 4: Quick Links */}
-          <div className="lg:col-span-1">
-            <h4 className="font-semibold text-brand-brown mb-5 text-base">Quick Links</h4>
-            <ul className="space-y-3">
+          <div className="col-span-1 lg:col-span-1">
+            <h4 className="font-semibold text-brand-brown mb-3 sm:mb-5 text-sm sm:text-base">Quick Links</h4>
+            <ul className="space-y-2 sm:space-y-3">
               {['My account', 'Order tracking', 'New arrivals'].map(link => (
                 <li key={link}>
-                  <a href="#" className="text-sm text-brand-brown/70 hover:text-brand-terracotta transition-colors">
+                  <a href="#" className="text-xs sm:text-sm text-brand-brown/70 hover:text-brand-terracotta transition-colors">
                     {link}
                   </a>
                 </li>
@@ -63,10 +66,10 @@ export default function Footer() {
           </div>
 
           {/* Col 5: Socials & Subscribe */}
-          <div className="md:col-span-2 lg:col-span-2 lg:pl-4">
-            <h4 className="font-medium italic text-brand-brown mb-5 text-base">Follow Us on Socials</h4>
-            <div className="flex space-x-4 mb-8">
-              <a href="#" className="w-8 h-8 rounded-full bg-brand-brown text-white flex items-center justify-center hover:bg-brand-terracotta transition-colors">
+          <div className="col-span-2 sm:col-span-2 md:col-span-2 lg:col-span-2 lg:pl-4 mt-4 sm:mt-0">
+            <h4 className="font-medium italic text-brand-brown mb-3 sm:mb-5 text-sm sm:text-base">Follow Us on Socials</h4>
+            <div className="flex space-x-3 sm:space-x-4 mb-6 sm:mb-8">
+              <a href="https://instagram.com/lanah.jewels" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-brand-brown text-white flex items-center justify-center hover:bg-brand-terracotta transition-colors">
                 <Instagram size={16} />
               </a>
               <a href="#" className="w-8 h-8 rounded-full bg-brand-brown text-white flex items-center justify-center hover:bg-brand-terracotta transition-colors">

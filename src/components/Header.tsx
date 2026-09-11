@@ -57,24 +57,24 @@ export default function Header() {
 
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center justify-center absolute left-1/2 -translate-x-1/2">
-            <a href="#" className={`font-serif text-2xl md:text-[28px] font-bold tracking-widest ${textColor} transition-colors drop-shadow-md`}>
+            <a href="#" className={`font-serif text-xl sm:text-2xl md:text-[28px] font-bold tracking-wider sm:tracking-widest ${textColor} transition-colors drop-shadow-md whitespace-nowrap`}>
               Lanah Jewels
             </a>
           </div>
 
           {/* Right side actions */}
-          <div className={`flex items-center space-x-3 sm:space-x-5 ${textColor}`}>
+          <div className={`flex items-center space-x-2 sm:space-x-5 ${textColor}`}>
             <button className={`${hoverColor} transition-colors group hidden sm:block p-1 drop-shadow-sm`} aria-label="Account">
               <User size={22} strokeWidth={1.5} className="group-hover:-translate-y-0.5 transition-transform" />
             </button>
             <button className={`${hoverColor} transition-colors group p-1 drop-shadow-sm`} aria-label="Search">
-              <Search size={22} strokeWidth={1.5} className="group-hover:-translate-y-0.5 transition-transform" />
+              <Search size={20} sm:size={22} strokeWidth={1.5} className="group-hover:-translate-y-0.5 transition-transform" />
             </button>
             <button className={`${hoverColor} transition-colors group p-1 drop-shadow-sm`} aria-label="Wishlist">
-              <Heart size={22} strokeWidth={1.5} className="group-hover:-translate-y-0.5 transition-transform" />
+              <Heart size={20} sm:size={22} strokeWidth={1.5} className="group-hover:-translate-y-0.5 transition-transform" />
             </button>
             <button className={`${hoverColor} transition-colors group p-1 drop-shadow-sm`} aria-label="Shopping Cart">
-              <ShoppingCart size={22} strokeWidth={1.5} className="group-hover:-translate-y-0.5 transition-transform" />
+              <ShoppingCart size={20} sm:size={22} strokeWidth={1.5} className="group-hover:-translate-y-0.5 transition-transform" />
             </button>
           </div>
 
@@ -88,19 +88,36 @@ export default function Header() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-brand-cream border-t border-brand-brown/10 overflow-hidden shadow-xl"
+            className="md:hidden bg-brand-cream/98 backdrop-blur-xl border-t border-brand-brown/10 overflow-hidden shadow-2xl"
           >
-            <div className="px-4 py-6 space-y-4">
+            <div className="px-6 py-6 space-y-4">
               {links.map((link) => (
                 <a
                   key={link}
                   href={`#${link.toLowerCase()}`}
-                  className="block text-lg font-medium text-brand-brown hover:text-brand-terracotta transition-colors"
+                  className="block text-lg font-medium text-brand-brown hover:text-brand-terracotta transition-colors py-1"
                   onClick={() => setIsOpen(false)}
                 >
                   {link}
                 </a>
               ))}
+              <a
+                href="#shop"
+                className="block text-lg font-medium text-brand-brown hover:text-brand-terracotta transition-colors py-1"
+                onClick={() => setIsOpen(false)}
+              >
+                Shop All
+              </a>
+              <div className="pt-4 border-t border-brand-brown/10 flex items-center space-x-4">
+                <a 
+                  href="https://instagram.com/lanah.jewels" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-xs font-semibold uppercase tracking-wider text-brand-terracotta bg-brand-terracotta/10 px-4 py-2 rounded-full"
+                >
+                  Instagram @lanah.jewels
+                </a>
+              </div>
             </div>
           </motion.div>
         )}
